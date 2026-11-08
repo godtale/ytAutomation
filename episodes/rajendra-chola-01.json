@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "id": "rajendra-chola-01",
+  "title": "ராஜேந்திர சோழன்: ஒரு புதிய தலைநகரின் கதை",
+  "series": "தமிழ் வரலாறு",
+  "source_credit": "இந்தியத் தொல்லியல் துறை · UNESCO",
+  "language": "ta-IN",
+  "format": "short",
+  "target_seconds": 50,
+  "editorial_status": "sample_for_review",
+  "narration": { "voice_id": "aTz8YI6ufQ8Yn0LP3EVa" },
+  "sources": [
+    { "id": "ASI", "title": "Great Living Chola Temples — Archaeological Survey of India", "url": "https://asi.nic.in/pages/WorldHeritageCholaTemples", "accessed_on": "2026-11-08", "locator": "Brihadisvara temple, Gangaikondacholapuram: opening paragraph on Rajendra I, Rajaraja I, and the new capital", "notes": "Use for parentage, capital, and attribution of northern-victory commemoration. No claim that Rajendra personally visited every conquered region. Exact capital foundation year is omitted." },
+    { "id": "UNESCO", "title": "Great Living Chola Temples — UNESCO World Heritage Centre", "url": "https://whc.unesco.org/en/list/250/", "accessed_on": "2026-11-08", "locator": "English description: Rajendra I's temple at Gangaikondacholisvaram and the three-temple World Heritage property", "notes": "Paraphrased facts only. No UNESCO photographs, logos, or copied descriptions used." }
+  ],
+  "claims": [
+    { "id": "C1", "text": "Rajendra I was Rajaraja I's son and established a new Chola capital at Gangaikondacholapuram.", "source_ids": ["ASI"], "evidence_type": "institutional_overview", "confidence": "high", "review_note": "Do not confuse Rajendra's capital with Rajaraja's Thanjavur temple." },
+    { "id": "C2", "text": "ASI describes Rajendra's new capital as commemorating his conquests in northern territories, with qualified dating.", "source_ids": ["ASI"], "evidence_type": "institutional_interpretation", "confidence": "high", "review_note": "Narration attributes this explanation to ASI and avoids an exact foundation date." },
+    { "id": "C3", "text": "Rajendra I built the Shiva temple at Gangaikondacholapuram, which belongs to UNESCO's Great Living Chola Temples property.", "source_ids": ["ASI", "UNESCO"], "evidence_type": "institutional_overview", "confidence": "high", "review_note": "UNESCO recognition applies to the temple property, not the whole ancient capital or every ruin." }
+  ],
+  "glossary": [
+    { "term": "ராஜேந்திர சோழன்", "note": "Rajendra Chola I; measured documentary delivery." },
+    { "term": "கங்கைகொண்ட சோழபுரம்", "note": "Keep the place name intelligible, with a natural phrase boundary." }
+  ],
+  "pronunciation_sample": "ராஜேந்திர சோழன். ராஜராஜ சோழன். கங்கைகொண்ட சோழபுரம். ஒரு புதிய தலைநகரின் கதை.",
+  "scenes": [
+    { "id": "s01", "role": "hook", "text": "ஒரு பேரரசரின் வரலாற்றை, ஒரு நகரத்தின் பெயரே சொல்ல முடியுமா? ராஜேந்திர சோழன் உருவாக்கிய கங்கைகொண்ட சோழபுரம், அதற்கு ஒரு சிறந்த உதாரணம்.", "claim_ids": ["C1"], "visual": "Original title card naming Rajendra and the capital; no invented royal portrait.", "layout": { "template": "title", "title": "ராஜேந்திர சோழன்", "subtitle": "ஒரு புதிய தலைநகரின் கதை", "items": ["கங்கைகொண்ட சோழபுரம்"] } },
+    { "id": "s02", "role": "identity", "text": "ராஜராஜ சோழனின் மகனான ராஜேந்திரன், சோழப் பேரரசுக்காக ஒரு புதிய தலைநகரை அமைத்தார். அந்த நகரம்தான் கங்கைகொண்ட சோழபுரம்.", "claim_ids": ["C1"], "visual": "Two labelled cards showing the father-son relationship, not a dated timeline.", "layout": { "template": "comparison", "title": "ராஜராஜனின் மகன்", "subtitle": "சோழ அரச மரபு", "items": ["ராஜராஜ சோழன் — தந்தை", "ராஜேந்திர சோழன் — மகன்"] } },
+    { "id": "s03", "role": "context", "text": "இந்தியத் தொல்லியல் துறை, அவரது வடக்கு வெற்றிகளை நினைவுகூரும் தலைநகராக இதை விவரிக்கிறது. ஒரு வெற்றியின் நினைவு, ஒரு நகரமாக உருவெடுத்தது.", "claim_ids": ["C2"], "visual": "Schematic concept cards for northern victories and the new capital; no territorial map or claimed borders.", "layout": { "template": "event", "title": "வெற்றியின் நினைவாக", "subtitle": "இந்தியத் தொல்லியல் துறையின் விளக்கம்", "items": ["வடக்கு வெற்றிகள்", "புதிய தலைநகரம்"] } },
+    { "id": "s04", "role": "heritage", "text": "அங்கே சிவனுக்காக ஒரு பிரமாண்டமான கோயிலையும் ராஜேந்திரன் கட்டினார். அந்தக் கோயில், இன்று யுனெஸ்கோவின் உலகப் பாரம்பரியச் சின்னங்களான சோழர் கோயில்களில் ஒன்றாக இருக்கிறது.", "claim_ids": ["C3"], "visual": "Evidence labels for the temple and World Heritage property; no UNESCO logo or architectural facsimile.", "layout": { "template": "evidence", "title": "இன்றும் நிற்கும் மரபு", "subtitle": "கங்கைகொண்ட சோழபுரம் கோயில்", "items": ["ராஜேந்திரன் கட்டிய சிவன் கோயில்", "உலகப் பாரம்பரிய அங்கீகாரம்"] } },
+    { "id": "s05", "role": "payoff", "text": "கங்கைகொண்ட சோழபுரம் என்பது வெறும் ஊர்ப்பெயர் அல்ல. ராஜேந்திர சோழனின் புதிய தலைநகரையும், அவர் விட்டுச் சென்ற கட்டடக்கலை மரபையும் நினைவூட்டும் பெயர்.", "claim_ids": ["C1", "C3"], "visual": "Closing labels summarize the sourced capital and temple legacy.", "layout": { "template": "conclusion", "title": "ஒரு பெயர். ஒரு வரலாறு.", "items": ["புதிய தலைநகரம்", "கட்டடக்கலை மரபு"] } }
+  ]
+}

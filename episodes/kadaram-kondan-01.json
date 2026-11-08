@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "kadaram-kondan-01",
+  "title": "kadaram kondan",
+  "series": "தமிழ் வரலாறு",
+  "language": "ta-IN",
+  "format": "short",
+  "target_seconds": 50,
+  "editorial_status": "draft",
+  "sources": [],
+  "claims": [],
+  "glossary": [],
+  "pronunciation_sample": "",
+  "scenes": [],
+  "narration": {
+    "voice_id": "aTz8YI6ufQ8Yn0LP3EVa"
+  },
+  "source_credit": "இந்தியத் தொல்லியல் துறை · UNESCO"
+}

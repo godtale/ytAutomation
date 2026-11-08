@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "id": "inscriptions-example",
+  "title": "கல்வெட்டுகள் நமக்கு என்ன சொல்கின்றன?",
+  "language": "ta-IN",
+  "format": "short",
+  "target_seconds": 45,
+  "editorial_status": "draft_for_review",
+  "sources": [
+    {
+      "id": "TNARCH",
+      "title": "Epigraphy — Tamil Nadu Department of Archaeology",
+      "url": "https://www.tnarch.gov.in/epigraphy",
+      "accessed_on": "2026-11-08",
+      "locator": "Opening definition; paragraph on inscriptions as historical evidence",
+      "notes": "Institutional overview. Used for basic definitions only; no counts or contested dates. Website image reuse rights have not been established."
+    },
+    {
+      "id": "ASI",
+      "title": "Epigraphy — Archaeological Survey of India",
+      "url": "https://asi.nic.in/pages/Epigraphy-Branch/HQ",
+      "accessed_on": "2026-11-08",
+      "locator": "Nature of Epigraphs; Epigraphy as a source of history",
+      "notes": "Institutional overview. Temple-wall records and the study of connected inscriptions."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "Inscriptions include writings engraved on stone and metal; examples occur on temple walls and copper plates.",
+      "source_ids": [
+        "TNARCH",
+        "ASI"
+      ],
+      "evidence_type": "institutional_overview",
+      "confidence": "high",
+      "review_note": "Basic definition, not an assertion about a particular inscription."
+    },
+    {
+      "id": "C2",
+      "text": "Temple inscriptions can provide information about donors, rulers, and administration.",
+      "source_ids": [
+        "ASI"
+      ],
+      "evidence_type": "institutional_overview",
+      "confidence": "high",
+      "review_note": "Not every inscription contains every category of information."
+    },
+    {
+      "id": "C3",
+      "text": "Studying connected inscriptions helps reconstruct aspects of historical society and administration.",
+      "source_ids": [
+        "ASI"
+      ],
+      "evidence_type": "institutional_overview",
+      "confidence": "high",
+      "review_note": "Do not imply that a single record gives a complete history."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "கல்வெட்டு",
+      "note": "Listen for clear articulation of the doubled consonant."
+    },
+    {
+      "term": "செப்பேடு",
+      "note": "Copper-plate record. Check vowel length and consonant clarity."
+    },
+    {
+      "term": "தொல்லியல்",
+      "note": "Archaeology. Review pronunciation in the sample."
+    }
+  ],
+  "pronunciation_sample": "கல்வெட்டுகள் நமக்கு என்ன சொல்கின்றன? கல்வெட்டு, செப்பேடு, தொல்லியல். பழைய பதிவுகள் வழியாக வரலாற்றை அறியலாம்.",
+  "scenes": [
+    {
+      "id": "s01",
+      "role": "hook",
+      "text": "ஒரு கோயில் சுவரில் இருக்கும் பழைய எழுத்துகள், நமக்கு என்ன சொல்லும்? அவை வெறும் எழுத்துகள் இல்லை. வரலாற்றை அறிய உதவும் பதிவுகள்!",
+      "claim_ids": [
+        "C1"
+      ],
+      "visual": "Original title card with abstract stone texture; no fabricated ancient lettering.",
+      "layout": {
+        "template": "title",
+        "title": "கல்வெட்டுகள் சொல்லும் வரலாறு",
+        "items": [
+          "கல்லில் பதிந்த பதிவுகள்"
+        ]
+      }
+    },
+    {
+      "id": "s02",
+      "role": "definition",
+      "text": "கல்லில் பொறிக்கப்பட்ட பதிவுகளைக் கல்வெட்டுகள் என்கிறோம். செப்புத் தகடுகளிலும் பழைய பதிவுகள் இருக்கின்றன. அவற்றைச் செப்பேடுகள் என்கிறோம்.",
+      "claim_ids": [
+        "C1"
+      ],
+      "visual": "Original diagram: stone and copper-plate silhouettes, labelled in modern Tamil as an explanatory illustration.",
+      "layout": {
+        "template": "evidence",
+        "title": "பதிவுகளின் வடிவங்கள்",
+        "items": [
+          "கல்வெட்டு",
+          "செப்பேடு"
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "role": "example",
+      "text": "சில கோயில் கல்வெட்டுகள், யார் கொடை கொடுத்தார்கள், அப்போது ஆட்சி செய்தவர் யார், நிர்வாகம் எப்படி இருந்தது போன்ற தகவல்களைத் தருகின்றன.",
+      "claim_ids": [
+        "C2"
+      ],
+      "visual": "Three simple labelled cards: கொடை, ஆட்சி, நிர்வாகம். No invented quotation or inscription.",
+      "layout": {
+        "template": "event",
+        "title": "பதிவுகள் தரும் தகவல்கள்",
+        "items": [
+          "கொடை",
+          "ஆட்சி",
+          "நிர்வாகம்"
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "role": "context",
+      "text": "ஆனால், ஒரு கல்வெட்டை மட்டும் வைத்து ஒரு காலத்தின் முழு வரலாற்றையும் சொல்ல முடியாது. தொடர்புடைய பல பதிவுகளை ஆய்வாளர்கள் சேர்த்துப் படிக்கிறார்கள்.",
+      "claim_ids": [
+        "C3"
+      ],
+      "visual": "Original diagram of multiple record cards being compared; label as an explanatory diagram.",
+      "layout": {
+        "template": "comparison",
+        "title": "ஒப்பிட்டு அறிதல்",
+        "items": [
+          "ஒரு பதிவு",
+          "தொடர்புடைய பதிவுகள்"
+        ]
+      }
+    },
+    {
+      "id": "s05",
+      "role": "payoff",
+      "text": "அப்படித்தான் பழைய சமூகத்தையும் அதன் நிர்வாகத்தையும் புரிந்துகொள்ள முடிகிறது. அடுத்த முறை பழைய எழுத்துகளைப் பார்த்தால், அவற்றுக்குப் பின்னால் ஒரு வரலாறு இருக்கலாம் என்பதை நினைவில் கொள்ளுங்கள்!",
+      "claim_ids": [
+        "C3"
+      ],
+      "visual": "Closing title card with source institution names. No external assets required for this draft.",
+      "layout": {
+        "template": "conclusion",
+        "title": "சான்றுகள் வழியே வரலாறு",
+        "items": [
+          "ஆய்வு",
+          "புரிதல்"
+        ]
+      }
+    }
+  ],
+  "series": "தமிழ் வரலாறு",
+  "source_credit": "தமிழ்நாடு தொல்லியல் துறை · ASI",
+  "narration": {
+    "voice_id": "aTz8YI6ufQ8Yn0LP3EVa"
+  }
+}

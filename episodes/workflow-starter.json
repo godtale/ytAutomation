@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "id": "workflow-starter",
+  "title": "தலைப்பை இங்கே எழுதவும்",
+  "language": "ta-IN",
+  "format": "short",
+  "target_seconds": 45,
+  "editorial_status": "draft",
+  "sources": [],
+  "claims": [],
+  "glossary": [],
+  "pronunciation_sample": "",
+  "scenes": [
+    {
+      "id": "s01",
+      "role": "title",
+      "text": "",
+      "claim_ids": [],
+      "visual": "Original explanatory diagram",
+      "layout": {
+        "template": "title",
+        "title": "காட்சித் தலைப்பு",
+        "subtitle": "",
+        "items": [
+          "விளக்கக் குறிப்பு"
+        ]
+      }
+    },
+    {
+      "id": "s02",
+      "role": "evidence",
+      "text": "",
+      "claim_ids": [],
+      "visual": "Original explanatory diagram",
+      "layout": {
+        "template": "evidence",
+        "title": "காட்சித் தலைப்பு",
+        "subtitle": "",
+        "items": [
+          "விளக்கக் குறிப்பு"
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "role": "timeline",
+      "text": "",
+      "claim_ids": [],
+      "visual": "Original explanatory diagram",
+      "layout": {
+        "template": "timeline",
+        "title": "காட்சித் தலைப்பு",
+        "subtitle": "",
+        "items": [
+          "விளக்கக் குறிப்பு"
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "role": "conclusion",
+      "text": "",
+      "claim_ids": [],
+      "visual": "Original explanatory diagram",
+      "layout": {
+        "template": "conclusion",
+        "title": "காட்சித் தலைப்பு",
+        "subtitle": "",
+        "items": [
+          "விளக்கக் குறிப்பு"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "subject": "Tamil history",
+  "language": "ta-IN",
+  "presentation": "faceless_narration",
+  "audience": "general Tamil-speaking audience",
+  "narration_style": "deep, measured Tamil documentary narration with clear pronunciation and restrained emotion",
+  "narration": {
+    "provider": "elevenlabs",
+    "model": "eleven_v3",
+    "pilot_voices": {
+      "inscriptions-01": {
+        "voice_id": "aTz8YI6ufQ8Yn0LP3EVa",
+        "name": "Rajan",
+        "status": "provisional_pilot_only"
+      }
+    }
+  },
+  "weekly_output": {
+    "shorts": 4,
+    "long_videos": 1
+  },
+  "formats": {
+    "short": {
+      "target_duration_seconds": 45,
+      "duration_range_seconds": [30, 60],
+      "width": 1080,
+      "height": 1920
+    },
+    "long": {
+      "target_duration_seconds": 600,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "budget": {
+    "currency": "INR",
+    "monthly_range": [2000, 5000],
+    "proposed_monthly_target": 3500,
+    "paid_generation_enabled_by_default": false,
+    "note": "ElevenLabs uses the existing subscription and environment credential. Track failed attempts and regenerations as costs."
+  },
+  "review": {
+    "research_required": true,
+    "script_approval_required": true,
+    "render_approval_required": true,
+    "automatic_publication_enabled": false
+  }
+}

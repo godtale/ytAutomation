@@ -1,0 +1,51 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
+import { createDashboard } from '../src/dashboard-server.js';
+
+test('AI jobs require opt-in, preserve manual content, and apply only to the original revision', async t => {
+  const root = await mkdtemp(join(tmpdir(), 'yt-ai-test-'));
+  await mkdir(join(root, 'config')); await mkdir(join(root, 'episodes'));
+  await writeFile(join(root, 'config/channel.json'), JSON.stringify({ narration: { provider: 'elevenlabs', model: 'eleven_v3' } }));
+  const brief = JSON.parse(await readFile(new URL('../episodes/rajendra-chola-01.json', import.meta.url), 'utf8'));
+  await writeFile(join(root, 'episodes', `${brief.id}.json`), JSON.stringify(brief));
+  const prior = process.env.OPENAI_API_KEY; process.env.OPENAI_API_KEY = 'test-key';
+  let calls = 0;
+  const aiGenerator = async ({ brief, onProgress }) => {
+    calls++; onProgress('Mock research completed.');
+    return { brief: { ...brief, title: 'புதிய வரைவு', editorial_status: 'ai_draft_for_review' }, research: { citations: [] }, review_notes: ['Review sources.'] };
+  };
+  let app = await createDashboard({ root, port: 0, aiGenerator });
+  t.after(async () => { await app.close(); if (prior === undefined) delete process.env.OPENAI_API_KEY; else process.env.OPENAI_API_KEY = prior;
+    if (resolve(root).startsWith(resolve(tmpdir()) + '\\yt-ai-test-') || resolve(root).startsWith(resolve(tmpdir()) + '/yt-ai-test-')) await rm(root, { recursive: true }); });
+  let boot = await (await fetch(app.url + '/api/bootstrap')).json();
+  const post = (path, data) => fetch(app.url + path, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Local-Token': boot.token }, body: JSON.stringify(data) });
+  const path = `/api/episodes/${brief.id}`;
+  const original = await (await fetch(app.url + path)).json();
+  const data = { action: 'generate', topic: 'Rajendra Chola', revision: original.revision };
+  assert.equal((await post(path + '/action', data)).status, 400); assert.equal(calls, 0);
+  const concurrent = await Promise.all([post(path + '/action', { ...data, allowPaid: true }), post(path + '/action', { ...data, allowPaid: true })]);
+  const accepted = concurrent.find(response => response.status === 202);
+  assert.ok(accepted);
+  assert.ok(concurrent.every(response => [200, 202, 409].includes(response.status)));
+  const queued = await accepted.json();
+  let done;
+  for (let i = 0; i < 100; i++) { done = await (await fetch(app.url + path)).json(); if (done.job?.status === 'completed') break; await new Promise(r => setTimeout(r, 10)); }
+  assert.equal(done.job.status, 'completed'); assert.equal(done.brief.title, brief.title); assert.equal(calls, 1);
+  const duplicate = await (await post(path + '/action', { ...data, allowPaid: true })).json();
+  assert.equal(duplicate.id, queued.id); assert.equal(duplicate.deduplicated, true); assert.equal(calls, 1);
+  await app.close(); app = await createDashboard({ root, port: 0, aiGenerator });
+  boot = await (await fetch(app.url + '/api/bootstrap')).json();
+  const restartedDuplicate = await (await post(path + '/action', { ...data, allowPaid: true })).json();
+  assert.equal(restartedDuplicate.id, queued.id); assert.equal(restartedDuplicate.deduplicated, true); assert.equal(calls, 1);
+  const applied = await (await post(path + '/apply-ai', { revision: original.revision, jobId: queued.id })).json();
+  assert.equal(applied.brief.title, 'புதிய வரைவு'); assert.equal(applied.approved, false); assert.equal(applied.job.applied, true);
+  assert.equal((await post(path + '/apply-ai', { revision: applied.revision, jobId: queued.id })).status, 409);
+  assert.equal((await post('/api/ai-controls', { enabled: false })).status, 200);
+  assert.equal((await post(path + '/action', { ...data, revision: applied.revision, topic: 'Another subject', allowPaid: true })).status, 409);
+  assert.equal(calls, 1);
+  assert.equal((await post(path, { revision: applied.revision, brief: { ...applied.brief, title: 'Manual edit' } })).status, 200);
+  assert.equal((await post(path + '/apply-ai', { revision: applied.revision, jobId: queued.id })).status, 409);
+});
